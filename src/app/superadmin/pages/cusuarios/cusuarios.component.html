@@ -1,0 +1,58 @@
+<div class="espacio"></div>
+
+<div class="p-fluid p-grid cusuarios">
+<div class="p-col-6 p-col-6 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="nombre"> 
+        <label for="inputtext">Nombre</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="apellido"> 
+        <label for="inputtext">Apellido</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="telefono"> 
+        <label for="inputtext">Telefono</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="direccion"> 
+        <label for="inputtext">Direccion</label>
+    </span>
+</div>
+<div class="p-field p-col-6 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="correo"> 
+        <label for="inputtext">Correo</label>
+    </span>
+</div>
+<div class="p-field p-col-6 p-md-4">
+    <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="identificacion"> 
+        <label for="inputtext">Identificacion</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <p-calendar inputId="calendar" [(ngModel)]="calendario"></p-calendar>
+        <label for="calendar">Calendar</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="generos" [(ngModel)]="genero" optionLabel="name"></p-dropdown>
+        <label for="dropdown">Genero</label>
+    </span>
+</div>
+<div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+        <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="cities" [(ngModel)]="rol" optionLabel="name"></p-dropdown>
+        <label for="dropdown">Rol</label>
+    </span>
+</div>
+</div>

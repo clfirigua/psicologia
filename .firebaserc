@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "psicologico-fd2fc": {
+      "hosting": {
+        "psicologiad": [
+          "psicologico-fd2fc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "psicologico-fd2fc"
+  }
+}
