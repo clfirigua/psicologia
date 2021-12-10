@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Generos } from '../../interfaces/usuarios.interface';
+import { Generos, tiposangre } from '../../interfaces/usuarios.interface';
 
 @Component({
   selector: 'app-cusuarios',
@@ -7,6 +7,7 @@ import { Generos } from '../../interfaces/usuarios.interface';
   styleUrls: ['./cusuarios.component.css']
 })
 export class CusuariosComponent implements OnInit {
+  edit:number= 0;
   cities: any[] = [];
   generos:any = [];
   nombre:string = "";
@@ -18,6 +19,8 @@ export class CusuariosComponent implements OnInit {
   calendario:string = "";
   genero:any = [];
   rol:any = [];
+  tiposangres:any =[];
+  tiposangre:any;
 
   constructor() { }
 
@@ -25,7 +28,17 @@ export class CusuariosComponent implements OnInit {
     this.generos = [
       {name: 'Masculino', code: 'Masculino'},
       {name: 'Femenino', code: 'Femenino'},
+    ];
+    this.tiposangres = [
+      {name:'O-',code:'O-'},
+      {name:'O+',code:'O+'},
+      {name:'A-',code:'A-'},
+      {name:'A+',code:'A+'},
+      {name:'B-',code:'B-'},
+      {name:'B+',code:'B+'},
+      {name:'AB+',code:'AB-'}
     ]
+    // TODO: seccion de los roles de los usuarios
     this.cities = [
       {name: 'New York', code: 'NY'},
       {name: 'Rome', code: 'RM'},
