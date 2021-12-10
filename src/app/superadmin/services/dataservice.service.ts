@@ -11,7 +11,7 @@ export class DataserviceService {
   usuarios:Observable<Usuarios[]>;
   constructor( public firestore: AngularFirestore) {
     // this.usuarios = firestore.collection<Usuarios>('Usuarios').valueChanges();
-    this.usersCollection = this.firestore.collection('Usuarios');
+    this.usersCollection = this.firestore.collection('Usuarios', ref => ref.where('estado', '==', 'activo'));
     this.usuarios = this.usersCollection.snapshotChanges().pipe(map(actions =>{
       return actions.map(
         a=>{
