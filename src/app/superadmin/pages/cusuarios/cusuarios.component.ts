@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Generos, tiposangre } from '../../interfaces/usuarios.interface';
+import { DataserviceService } from '../../services/dataservice.service';
 
 @Component({
   selector: 'app-cusuarios',
@@ -12,19 +13,23 @@ export class CusuariosComponent implements OnInit {
   generos:any = [];
   nombre:string = "";
   apellido:string = "";
-  telefono:string = "";
+  telefono:number = 0;
   direccion:string = "";
   correo:string = "";
-  identificacion:string = "";
+  identificacion:number = 0;
   calendario:string = "";
   genero:any = [];
   rol:any = [];
   tiposangres:any =[];
   tiposangre:any;
-
-  constructor() { }
+  usuarios:any = []
+  constructor(public dta:DataserviceService) { }
 
   ngOnInit(): void {
+    this.dta.getuser().subscribe(cusuarios=>{
+      this.usuarios = cusuarios
+    });
+
     this.generos = [
       {name: 'Masculino', code: 'Masculino'},
       {name: 'Femenino', code: 'Femenino'},
@@ -44,5 +49,18 @@ export class CusuariosComponent implements OnInit {
       {name: 'Rome', code: 'RM'},
   ];
   }
+  //TODO falta el editar y eliminar los datos de los usuarios
 
+  guardar(){
+     this.dta.createuser({
+      nombre: this.nombre,
+      apellido:this.apellido,
+      telefono:this.telefono,
+      direccion:this.direccion,
+      correo:this.correo,
+      identificacion:this.identificacion,
+      rh:this.tiposangre.name,
+      genero:this.genero.name
+     })
+  }
 }

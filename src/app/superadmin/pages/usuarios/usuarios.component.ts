@@ -15,13 +15,13 @@ export class UsuariosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.dta.getdatos().subscribe(cusuarios=>{
-      console.log(cusuarios);
+    this.dta.getuser().subscribe(cusuarios=>{
       this.usuarios = cusuarios
     })
   }
   selectProduct(usuario: Usuarios) {
-    console.log(usuario.id)
+    this.dta.getiduser( usuario.identificacion )
+    console.log()
   }
   exportExcel(){
     import("xlsx").then(xlsx => {

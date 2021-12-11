@@ -3,7 +3,7 @@
 <div *ngIf="edit === 0; else editar">
     <div class="botones">
 
-        <button pButton type="button" icon="pi pi-check" iconPos="left" label="Guardar" class="p-button-success"></button>
+        <button pButton type="button" icon="pi pi-check" iconPos="left" label="Guardar" (click)="guardar()" class="p-button-success"></button>
     </div>
 </div>
 
