@@ -6,6 +6,8 @@ import { InputMaskModule } from "primeng/inputmask";
 import { CalendarModule } from "primeng/calendar";
 import { DropdownModule } from "primeng/dropdown";
 import {InputTextModule} from 'primeng/inputtext';
+import {ToastModule} from 'primeng/toast';
+
 
 @NgModule({
   exports: [
@@ -15,7 +17,8 @@ import {InputTextModule} from 'primeng/inputtext';
     InputMaskModule,
     CalendarModule,
     DropdownModule,
-    InputTextModule
+    InputTextModule,
+    ToastModule
   ]
 })
 export class PrimengModule { }

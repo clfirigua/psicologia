@@ -2,13 +2,15 @@ export interface Usuarios{
     id?:string,
     nombre:string,
     apellido:string,
-    telefono:number,
+    telefono:string,
     direccion:string,
     correo:string,
-    identificacion:number,
+    identificacion:string,
     formularios?:formulario,
     rh:tiposangre,
-    genero:generos
+    genero:generos,
+    estado?:string,
+    fnacimiento?:string
 }
 
 export interface formulario{
