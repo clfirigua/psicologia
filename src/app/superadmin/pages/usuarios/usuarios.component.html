@@ -1,5 +1,4 @@
 <div class="espacio"></div>
-<p-toast position="top-left"  key="myKey1"></p-toast>
 <p-table [value]="usuarios" responsiveLayout="scroll">
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
@@ -17,7 +16,6 @@
             <th>Genero</th>
             <th>Rh</th>
             <th style="width:4rem"></th>
-            <th style="width:4rem"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
@@ -32,9 +30,6 @@
             <td>{{product.rh}}</td>
             <td>
                 <button type="button" pButton pRipple icon="pi pi-user-edit" (click)="selectProduct(product)"></button>
-            </td>
-            <td>
-                <button type="button" pButton pRipple icon="pi pi-times" (click)="selectProduct(product)" class="p-button-danger"></button>
             </td>
         </tr>
     </ng-template>

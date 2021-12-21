@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuarios, } from '../../interfaces/usuarios.interface';
-
+import { DataserviceService } from '../../services/dataservice.service';
 import * as FileSaver from 'file-saver';
-import { DataserviceService } from '../../services/usuarios/dataservice.service';
-import { MessageService } from 'primeng/api';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.css'],
-  providers: [MessageService]
+  styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
   usuarios:any = []
-  constructor(public dta:DataserviceService, private toast: MessageService,private route: Router) {
+  constructor(public dta:DataserviceService) {
    
    }
 
@@ -25,11 +21,7 @@ export class UsuariosComponent implements OnInit {
     })
   }
   selectProduct(usuario: Usuarios) {
-<<<<<<< Updated upstream
     console.log(usuario.id)
-=======
-    this.route.navigate(['/superadmin/editusuarios', usuario.identificacion])
->>>>>>> Stashed changes
   }
   exportExcel(){
     import("xlsx").then(xlsx => {
