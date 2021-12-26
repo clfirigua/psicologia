@@ -4,7 +4,8 @@ import { Generos } from '../../interfaces/usuarios.interface';
 @Component({
   selector: 'app-cusuarios',
   templateUrl: './cusuarios.component.html',
-  styleUrls: ['./cusuarios.component.css']
+  styleUrls: ['./cusuarios.component.css', '/cusuarios.component.sass']
+
 })
 export class CusuariosComponent implements OnInit {
   cities: any[] = [];

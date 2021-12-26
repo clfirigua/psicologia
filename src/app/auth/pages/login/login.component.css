@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-:root{
-    --primario : #2196f3;
-    --secundario: #0075A0;
-    --medio: #0075A0;
-    --darksecundario: #00425F;
-    --darkprimario: #001B2B;
-    --blanco:#ffffff;
-}
+
 html{
     font-size: 62.5%;
     margin: 0% 10%;
@@ -21,10 +14,11 @@ body{
     display:flex;
     flex-wrap: wrap;
     height: 100vh;
+    background-color: var(--blanco);
 }
 .row-login{
     align-items: center;
-    background-color: #2196f3;
+    background-color: var(--primario);
     flex: 1.5;
     padding: 0rem 0rem;
 }
