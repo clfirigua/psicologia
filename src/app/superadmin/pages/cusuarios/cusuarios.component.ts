@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { Generos } from '../../interfaces/usuarios.interface';
 
 @Component({
   selector: 'app-cusuarios',
   templateUrl: './cusuarios.component.html',
-  styleUrls: ['./cusuarios.component.css', '/cusuarios.component.sass']
+  styleUrls: ['./cusuarios.component.css' ]
 
 })
 export class CusuariosComponent implements OnInit {

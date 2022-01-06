@@ -1,1 +1,52 @@
-<p>cformulario works!</p>
+<section id="form">
+    <div class="container">
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@getbootstrap">Agregar pregunta +</button>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Añadir pregunta al formulario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <span class="p-float-label mt-2">
+                                <input class="input" type="text" id="inputtext" pInputText [(ngModel)]="pregunta">
+                                <label for="inputtext">Pregunta</label>
+                            </span>
+                            <span class="p-float-label mt-4">
+                                <p-dropdown class="select" inputId="dropdown" [autoDisplayFirst]="false"
+                                    [options]="tipoPregunta" [(ngModel)]="tipoPregunta" optionLabel="name"></p-dropdown>
+                                <label for="dropdown">Tipo de respuesta</label>
+                            </span>
+                            <span class="p-float-label mt-4">
+                                <p-dropdown class="select" inputId="dropdown" [autoDisplayFirst]="false"
+                                    [options]="preguntaDepende" [(ngModel)]="preguntaDepende" optionLabel="name"></p-dropdown>
+                                <label for="dropdown">pregunta de la que depende</label>
+                            </span>
+
+                            <!-- Respuestas  -->
+                            <span class="p-float-label mt-2" *ngFor="let pregunta of preguntas; let in=index">
+                                <input type="text" [(ngModel)]="preguntas[in].value" name="name{{in}}" class="form-control" #name="ngModel" required />
+                                <label for="inputtext">respuesta</label>
+                            </span>
+
+                            <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                                <button class="btn btn-success" id="añadirrespuestas"  (click)="add()">agregar respuesta</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Guardar pregunta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

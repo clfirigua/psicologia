@@ -12,6 +12,8 @@ import { ErrorpageComponent } from './shares/errorpage/errorpage.component';
 import { PrimengModule } from './primeng/primeng.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
     PrimengModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics())
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService,UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
